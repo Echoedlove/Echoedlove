@@ -1,36 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Echoed Love</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body style="font-family: 'Playfair Display', serif; background-color: #f8f9fa;">
-  <header>
-    <nav style="background-color: #9b287b; padding: 1rem; text-align: center;">
-      <ul style="list-style: none; display: flex; justify-content: center; gap: 2rem; margin: 0; padding: 0;">
-        <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 1.2rem;">Home</a></li>
-        <li><a href="shop.html" style="color: #fff; text-decoration: none; font-size: 1.2rem;">Shop</a></li>
-        <li><a href="about.html" style="color: #fff; text-decoration: none; font-size: 1.2rem;">About</a></li>
-        <li><a href="contact.html" style="color: #fff; text-decoration: none; font-size: 1.2rem;">Contact</a></li>
-        <li><a href="poems.html" style="color: #fff; text-decoration: none; font-size: 1.2rem;">Poems</a></li> <!-- Added Poems link -->
-      </ul>
-    </nav>
-  </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EchoedLove</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff99cc;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        section#home-intro {
+            background: linear-gradient(to right, #ff99cc, #66ccff);
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+        section#home-intro h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        section#home-intro p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-  <main>
-    <section class="hero" style="text-align: center; padding: 3rem 0;">
-      <h1 style="font-size: 3rem; color: #9b287b;">Echoed Love</h1>
-      <p style="font-size: 1.5rem; color: #555;">Where love lingers and words paint emotions.</p>
+        /* Poem Section */
+        .poem-section {
+            background-color: #f9f9f9;
+            padding: 40px;
+            text-align: center;
+        }
+        .poem-section h2 {
+            font-size: 2.5em;
+            color: #ff66b2;
+            margin-bottom: 30px;
+        }
+        .poem-section .poem {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .poem-section .poem h3 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .poem-section .poem p {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Page Section (as you requested, no changes here) -->
+    <header>
+        <h1>EchoedLove</h1>
+    </header>
+
+    <section id="home-intro">
+        <h2>"Where love lingers and words paint emotions"</h2>
+        <p>Welcome to EchoedLove, where emotions take shape through poetry. Let our words speak to your heart and take you on a journey of love, loss, and everything in between. Browse through our collections or request a custom poem for the perfect occasion. Every word is crafted to bring you closer to your feelings and the ones you love.</p>
     </section>
 
-    <!-- Your Home Page Content Goes Here -->
+    <!-- Poem Section -->
+    <section class="poem-section">
+        <h2>Featured Poems</h2>
 
-  </main>
+        <div class="poem">
+            <h3>"Drowning for You"</h3>
+            <p>He was the ocean, I would drown in. If it meant He wouldn't be lonely.</p>
+        </div>
 
-  <footer style="background-color: #9b287b; color: #fff; text-align: center; padding: 1rem;">
-    <p>&copy; 2025 Echoed Love. All Rights Reserved.</p>
-  </footer>
+        <div class="poem">
+            <h3>"Craving His Existence"</h3>
+            <p>I crave his existence like, Love craves trust, Sky craves stars in the darkness, Sea craves shore that holds it close. I crave his existence like, Lovers crave their endless dove.</p>
+        </div>
+
+        <div class="poem">
+            <h3>"If Only I Knew"</h3>
+            <p>If only I knew, I'd yearn for those days, Childhood's magic, in wonder-filled ways...</p>
+        </div>
+
+        <div class="poem">
+            <h3>"Symphony of Love"</h3>
+            <p>Oh love! Loving you was like the ocean reaching for the shore, the blooming of blossom trees, warmth on a hibernal day...</p>
+        </div>
+
+        <div class="poem">
+            <h3>"The Paradox of Hope"</h3>
+            <p>In secret depths, I hide and ache Yearning to escape, to break the chain A glimmer of hope, a sunbeam bright...</p>
+        </div>
+
+        <div class="poem">
+            <h3>"A Love Unspoken"</h3>
+            <p>He was never mine, I knew from the start Yet I took his heart, and played with the art...</p>
+        </div>
+
+        <!-- You can add more poems here as needed -->
+    </section>
+
 </body>
 </html>
