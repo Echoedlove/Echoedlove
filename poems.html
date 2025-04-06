@@ -446,4 +446,73 @@
     </section>
 
 </body>
+ 
+    <body>
+    <div class="review-section">
+      <h3>Did this poem speak to you?</h3>
+      <p>Rate this poem and share your thoughts (optional):</p>
+
+      <div class="stars" id="poem-rating">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+      </div>
+
+      <textarea placeholder="What did this poem remind you of? A memory, a person, a feeling?"></textarea>
+      <button onclick="submitPoemReview()">Submit Feedback</button>
+
+      <div class="review-display" id="poem-reviews">
+        <h3>Whispers from the heart:</h3>
+        <div class="review-card">
+          <div class="stars">
+            <span class="selected">★</span>
+            <span class="selected">★</span>
+            <span class="selected">★</span>
+            <span class="selected">★</span>
+            <span>★</span>
+          </div>
+          <p><em>"Felt like my teenage self was whispering through these lines. Nostalgic and warm."</em><br>– Anonymous</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const poemStars = document.querySelectorAll('#poem-rating span');
+    let poemRating = 0;
+
+    poemStars.forEach(star => {
+      star.addEventListener('click', () => {
+        poemRating = parseInt(star.dataset.value);
+        poemStars.forEach(s => s.classList.remove('selected'));
+        for (let i = 0; i < poemRating; i++) {
+          poemStars[i].classList.add('selected');
+        }
+      });
+    });
+
+    function submitPoemReview() {
+      const reviewText = document.querySelector('textarea').value;
+      const reviewsDiv = document.getElementById('poem-reviews');
+      if (poemRating === 0 && reviewText.trim() === '') return;
+
+      const newReview = document.createElement('div');
+      newReview.className = 'review-card';
+      const starHTML = Array.from({ length: 5 }, (_, i) =>
+        <span class="${i < poemRating ? 'selected' : ''}">★</span>
+      ).join('');
+
+      newReview.innerHTML = `
+        <div class="stars">${starHTML}</div>
+        <p><em>"${reviewText || 'No comment added.'}"</em><br>– Anonymous</p>
+      `;
+
+      reviewsDiv.appendChild(newReview);
+      document.querySelector('textarea').value = '';
+      poemStars.forEach(s => s.classList.remove('selected'));
+      poemRating = 0;
+    }
+  </body>
 </html>
