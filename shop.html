@@ -215,4 +215,77 @@
   </div>
 
 </body>
+
+  
+  <body>
+  <div class="review-section">
+    <h2>We'd love to hear what you felt!</h2>
+    <p>Your words help others feel more confident about ordering, and they mean the world to us.</p>
+
+    <div class="stars" id="star-rating">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+
+    <textarea placeholder="Tell us what this poem meant to you or how it was received."></textarea>
+    <button onclick="submitReview()">Submit Review</button>
+
+    <div class="review-display" id="reviews">
+      <h2>What our readers are saying:</h2>
+      <!-- Sample Review -->
+      <div class="review-card">
+        <div class="stars">
+          <span class="selected">★</span>
+          <span class="selected">★</span>
+          <span class="selected">★</span>
+          <span class="selected">★</span>
+          <span class="selected">★</span>
+        </div>
+        <p><em>"This poem made my partner tear up—it was like you knew our story. Thank you!"</em><br>– A Happy Buyer</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('#star-rating span');
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.dataset.value);
+        stars.forEach(s => s.classList.remove('selected'));
+        for (let i = 0; i < selectedRating; i++) {
+          stars[i].classList.add('selected');
+        }
+      });
+    });
+
+    function submitReview() {
+      const reviewText = document.querySelector('textarea').value;
+      const reviewsDiv = document.getElementById('reviews');
+      if (selectedRating === 0 && reviewText.trim() === '') return;
+
+      const newReview = document.createElement('div');
+      newReview.className = 'review-card';
+      const starHTML = Array.from({ length: 5 }, (_, i) =>
+        <span class="${i < selectedRating ? 'selected' : ''}">★</span>
+      ).join('');
+
+      newReview.innerHTML = `
+        <div class="stars">${starHTML}</div>
+        <p><em>"${reviewText || 'No comment added.'}"</em><br>– Anonymous</p>
+      `;
+
+      reviewsDiv.appendChild(newReview);
+      document.querySelector('textarea').value = '';
+      stars.forEach(s => s.classList.remove('selected'));
+      selectedRating = 0;
+    }
+  </script>
+</body>
+</html>
+ 
 </html>
